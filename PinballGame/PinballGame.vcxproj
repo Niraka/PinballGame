@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
+    <ProjectConfiguration Include="debug|Win32">
+      <Configuration>debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
+    <ProjectConfiguration Include="release|Win32">
+      <Configuration>release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -24,26 +24,26 @@
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
@@ -55,48 +55,69 @@
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <OutDir>$(ProjectDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)temp\$(Configuration)\</IntDir>
+    <TargetName>Pinball</TargetName>
+    <IncludePath>$(ProjectDir)include;$(ProjectDir)libraries\SFML-2.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)libraries\SFML-2.1\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(ProjectDir)source;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <OutDir>$(ProjectDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)temp\$(Configuration)\</IntDir>
+    <TargetName>Pinball</TargetName>
+    <IncludePath>$(ProjectDir)include;$(ProjectDir)libraries\SFML-2.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)libraries\SFML-2.1\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(ProjectDir)source;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>sfml-main-d.lib;sfml-system-s-d.lib;sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-audio-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-    </ClCompile>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>sfml-main.lib;sfml-system-s.lib;sfml-graphics-s.lib;sfml-window-s.lib;sfml-audio-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
@@ -110,6 +131,101 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\AABB.h" />
+    <ClInclude Include="include\AnimationSnowfall.h" />
+    <ClInclude Include="include\AudioManager.h" />
+    <ClInclude Include="include\Circle.h" />
+    <ClInclude Include="include\Collidable.h" />
+    <ClInclude Include="include\CollidableEdgeNode.h" />
+    <ClInclude Include="include\CollisionListener.h" />
+    <ClInclude Include="include\CollisionsManager.h" />
+    <ClInclude Include="include\Flipper.h" />
+    <ClInclude Include="include\FlipperBuilder.h" />
+    <ClInclude Include="include\FlipperLeft.h" />
+    <ClInclude Include="include\FlipperRight.h" />
+    <ClInclude Include="include\FontManager.h" />
+    <ClInclude Include="include\GameObject.h" />
+    <ClInclude Include="include\GameObjectBuilder.h" />
+    <ClInclude Include="include\Map.h" />
+    <ClInclude Include="include\MapAvalanche.h" />
+    <ClInclude Include="include\MapBuilder.h" />
+    <ClInclude Include="include\MapEventListener.h" />
+    <ClInclude Include="include\MapSnowTunnels.h" />
+    <ClInclude Include="include\Material.h" />
+    <ClInclude Include="include\MaterialBuilder.h" />
+    <ClInclude Include="include\MaterialsManager.h" />
+    <ClInclude Include="include\Movable.h" />
+    <ClInclude Include="include\MovableListener.h" />
+    <ClInclude Include="include\OBB.h" />
+    <ClInclude Include="include\Pinball.h" />
+    <ClInclude Include="include\PlayerController.h" />
+    <ClInclude Include="include\ScoresManager.h" />
+    <ClInclude Include="include\ScoreTracker.h" />
+    <ClInclude Include="include\Shape.h" />
+    <ClInclude Include="include\Snowflake.h" />
+    <ClInclude Include="include\StringsManager.h" />
+    <ClInclude Include="include\TextureManager.h" />
+    <ClInclude Include="include\UIBuilder.h" />
+    <ClInclude Include="include\UIButton.h" />
+    <ClInclude Include="include\UIButtonListener.h" />
+    <ClInclude Include="include\UIComponent.h" />
+    <ClInclude Include="include\UIComponentBuilder.h" />
+    <ClInclude Include="include\UIComponentListener.h" />
+    <ClInclude Include="include\UIDestructor.h" />
+    <ClInclude Include="include\UIFrame.h" />
+    <ClInclude Include="include\UIImage.h" />
+    <ClInclude Include="include\UIManager.h" />
+    <ClInclude Include="include\UIText.h" />
+    <ClInclude Include="include\Vector2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\AABB.cpp" />
+    <ClCompile Include="source\AnimationSnowfall.cpp" />
+    <ClCompile Include="source\AudioManager.cpp" />
+    <ClCompile Include="source\Circle.cpp" />
+    <ClCompile Include="source\Collidable.cpp" />
+    <ClCompile Include="source\CollidableEdgeNode.cpp" />
+    <ClCompile Include="source\CollisionListener.cpp" />
+    <ClCompile Include="source\CollisionsManager.cpp" />
+    <ClCompile Include="source\Flipper.cpp" />
+    <ClCompile Include="source\FlipperBuilder.cpp" />
+    <ClCompile Include="source\FlipperLeft.cpp" />
+    <ClCompile Include="source\FlipperRight.cpp" />
+    <ClCompile Include="source\FontManager.cpp" />
+    <ClCompile Include="source\GameObject.cpp" />
+    <ClCompile Include="source\GameObjectBuilder.cpp" />
+    <ClCompile Include="source\Main.cpp" />
+    <ClCompile Include="source\Map.cpp" />
+    <ClCompile Include="source\MapAvalanche.cpp" />
+    <ClCompile Include="source\MapBuilder.cpp" />
+    <ClCompile Include="source\MapEventListener.cpp" />
+    <ClCompile Include="source\MapSnowTunnels.cpp" />
+    <ClCompile Include="source\Material.cpp" />
+    <ClCompile Include="source\MaterialBuilder.cpp" />
+    <ClCompile Include="source\MaterialsManager.cpp" />
+    <ClCompile Include="source\Movable.cpp" />
+    <ClCompile Include="source\MovableListener.cpp" />
+    <ClCompile Include="source\OBB.cpp" />
+    <ClCompile Include="source\Pinball.cpp" />
+    <ClCompile Include="source\PlayerController.cpp" />
+    <ClCompile Include="source\ScoresManager.cpp" />
+    <ClCompile Include="source\ScoreTracker.cpp" />
+    <ClCompile Include="source\Shape.cpp" />
+    <ClCompile Include="source\Snowflake.cpp" />
+    <ClCompile Include="source\StringsManager.cpp" />
+    <ClCompile Include="source\TextureManager.cpp" />
+    <ClCompile Include="source\UIBuilder.cpp" />
+    <ClCompile Include="source\UIButton.cpp" />
+    <ClCompile Include="source\UIButtonListener.cpp" />
+    <ClCompile Include="source\UIComponent.cpp" />
+    <ClCompile Include="source\UIComponentBuilder.cpp" />
+    <ClCompile Include="source\UIComponentListener.cpp" />
+    <ClCompile Include="source\UIDestructor.cpp" />
+    <ClCompile Include="source\UIFrame.cpp" />
+    <ClCompile Include="source\UIImage.cpp" />
+    <ClCompile Include="source\UIManager.cpp" />
+    <ClCompile Include="source\UIText.cpp" />
+    <ClCompile Include="source\Vector2D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
