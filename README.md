@@ -3,4 +3,4 @@ A pinball game developed as a 2nd year university project for my Objected Orient
 
 The project achieved a grade of 95/100.
 
-Compiled with Visual Studio 2012 (v110)
+Compiled with Visual Studio 2012 (build tools v110) (32 bit)
