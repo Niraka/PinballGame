@@ -1,0 +1,83 @@
+# UI file for the map selection menu
+#
+# WARNING: Almost any errors in configuration will result in a program crash
+#          as the majority of input is not filtered
+###################################
+[textures prefix]
+../data/textures/menus/
+
+[textures]
+background_infopanel background_infopanel.png
+map_splash_avalanche map_splash_avalanche.png
+map_splash_snow_tunnels map_splash_snow_tunnels.png
+
+[audio prefix]
+../data/audio/
+
+[audio]
+sclick_sound button_click.wav
+shover_sound button_hover.wav
+
+[strings prefix]
+../data/strings/
+
+[strings]
+menus.txt
+
+[fonts prefix]
+../data/fonts/
+
+[fonts]
+default coolvetica.ttf
+
+[components]
+NEW
+sName=imgMapSelectionBackground
+fXOffset=450
+fYOffset=100
+fWidth=700
+fHeight=600
+sType=image
+sTexture=background_infopanel
+END
+NEW
+sName=imgMapSelectionAvalanche
+fXOffset=75
+fYOffset=135
+fWidth=250
+fHeight=400
+sType=image
+sTexture=map_splash_avalanche
+END
+NEW
+sName=imgMapSelectionSnowTunnels
+fXOffset=375
+fYOffset=135
+fWidth=250
+fHeight=400
+sType=image
+sTexture=map_splash_snow_tunnels
+END
+NEW
+sName=txtMapSelectionTitle
+fXOffset=350
+fYOffset=30
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=map_selection_title
+sAlignment=centre
+iFontSize=60
+sFont=default
+END
+
+###############
+#These sections must come after the components section
+##
+[structure tree]
+ROOT->imgMapSelectionBackground
+imgMapSelectionBackground->txtMapSelectionTitle
+imgMapSelectionBackground->imgMapSelectionAvalanche
+imgMapSelectionBackground->imgMapSelectionSnowTunnels
+

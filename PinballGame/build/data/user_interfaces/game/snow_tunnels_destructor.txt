@@ -1,0 +1,36 @@
+# UI destructor file for the snow_tunnels map.
+###################################
+[textures]
+background_game
+background_strip_top
+background_strip_bottom
+button_quit
+button_reset
+strip_graphic
+
+[audio]
+sclick_sound
+shover_sound
+
+[strings prefix]
+strings/
+
+[strings]
+ingame.txt
+
+[fonts]
+
+[root links]
+frameStrip
+imgBackgroundGame
+
+[deconstruction]
+btnGameReset
+btnGameQuit
+txtScore
+txtScoreTitle
+imgStripGraphic
+imgBackgroundStripBot
+imgBackgroundStripTop
+imgBackgroundGame
+frameStrip

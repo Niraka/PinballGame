@@ -1,0 +1,24 @@
+# UI destructor file for the map selection menu
+###################################
+[textures]
+background_infopanel
+map_splash_avalanche
+map_splash_snow_tunnels
+
+[audio]
+
+[strings prefix]
+
+[strings]
+
+[fonts]
+
+[root links]
+imgMapSelectionBackground
+
+[deconstruction]
+imgMapSelectionAvalanche
+imgMapSelectionSnowTunnels
+txtMapSelectionTitle
+imgMapSelectionBackground
+

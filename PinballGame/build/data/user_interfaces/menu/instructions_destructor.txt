@@ -1,0 +1,28 @@
+# UI destructor file for the instructions menu
+###################################
+[textures]
+background_infopanel
+
+[audio]
+
+[strings prefix]
+
+[strings]
+
+[fonts]
+
+[root links]
+imgInstructionsBackground
+
+[deconstruction]
+txtInstructionsInfoMisc
+txtInstructionsInfo
+txtInstructionsTitle
+imgInstructionsBackground
+
+
+
+
+
+
+

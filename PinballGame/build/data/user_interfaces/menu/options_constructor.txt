@@ -1,0 +1,184 @@
+# UI file for the options menu
+#
+# WARNING: Almost any errors in configuration will result in a program crash
+#          as the majority of input is not filtered
+###################################
+[textures prefix]
+../data/textures/menus/
+
+[textures]
+background_infopanel background_infopanel.png
+checkbox_red checkbox_red.png
+checkbox_green checkbox_green.png
+keyset_zxm_green keyset_zxm_green.png
+keyset_adw_green keyset_adw_green.png
+keyset_123_green keyset_123_green.png
+keyset_zxm_red keyset_zxm_red.png
+keyset_adw_red keyset_adw_red.png
+keyset_123_red keyset_123_red.png
+
+[audio prefix]
+../data/audio/
+
+[audio]
+sclick_sound button_click.wav
+shover_sound button_hover.wav
+
+[strings prefix]
+../data/strings/
+
+[strings]
+ingame.txt
+
+[fonts prefix]
+../data/fonts/
+
+[fonts]
+default coolvetica.ttf
+
+[components]
+NEW
+sName=imgOptionsBackground
+fXOffset=450
+fYOffset=100
+fWidth=700
+fHeight=600
+sType=image
+sTexture=background_infopanel
+END
+NEW
+sName=txtOptionsTitle
+fXOffset=350
+fYOffset=30
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=options_title
+sAlignment=centre
+iFontSize=50
+sFont=default
+END
+NEW
+sName=txtOptionsMusic
+fXOffset=35
+fYOffset=120
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=options_music
+sAlignment=left
+iFontSize=30
+sFont=default
+END
+NEW
+sName=txtOptionsHotkeys
+fXOffset=35
+fYOffset=180
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=options_hotkeys
+sAlignment=left
+iFontSize=30
+sFont=default
+END
+NEW
+sName=txtOptionsSnowfall
+fXOffset=35
+fYOffset=240
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=options_snowfall
+sAlignment=left
+iFontSize=30
+sFont=default
+END
+NEW
+sName=txtOptionsKeyset
+fXOffset=35
+fYOffset=340
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=options_keyset
+sAlignment=left
+iFontSize=30
+sFont=default
+END
+NEW
+sName=imgOptionsZXMSet
+fXOffset=100
+fYOffset=450
+fWidth=100
+fHeight=40
+sType=image
+sTexture=keyset_zxm_red
+END
+NEW
+sName=imgOptionsADWSet
+fXOffset=300
+fYOffset=450
+fWidth=100
+fHeight=40
+sType=image
+sTexture=keyset_adw_red
+END
+NEW
+sName=imgOptions123Set
+fXOffset=500
+fYOffset=450
+fWidth=100
+fHeight=40
+sType=image
+sTexture=keyset_123_red
+END
+NEW
+sName=imgOptionsMusicCheckbox
+fXOffset=550
+fYOffset=120
+fWidth=40
+fHeight=40
+sType=image
+sTexture=checkbox_green
+END
+NEW
+sName=imgOptionsHotkeysCheckbox
+fXOffset=550
+fYOffset=180
+fWidth=40
+fHeight=40
+sType=image
+sTexture=checkbox_green
+END
+NEW
+sName=imgOptionsSnowfallCheckbox
+fXOffset=550
+fYOffset=240
+fWidth=40
+fHeight=40
+sType=image
+sTexture=checkbox_green
+END
+
+###############
+#These sections must come after the components section
+##
+[structure tree]
+ROOT->imgOptionsBackground
+imgOptionsBackground->txtOptionsTitle
+imgOptionsBackground->txtOptionsMusic
+imgOptionsBackground->txtOptionsHotkeys
+imgOptionsBackground->txtOptionsSnowfall
+imgOptionsBackground->txtOptionsKeyset
+imgOptionsBackground->imgOptionsMusicCheckbox
+imgOptionsBackground->imgOptionsHotkeysCheckbox
+imgOptionsBackground->imgOptionsSnowfallCheckbox
+imgOptionsBackground->imgOptionsZXMSet
+imgOptionsBackground->imgOptionsADWSet
+imgOptionsBackground->imgOptions123Set

@@ -1,0 +1,131 @@
+# UI file for the main menu
+#
+# WARNING: Almost any errors in configuration will result in a program crash
+#          as the majority of input is not filtered
+###################################
+[textures prefix]
+../data/textures/menus/
+
+[textures]
+button_play button_play.png
+button_instructions button_instructions.png
+button_high_scores button_high_Scores.png
+button_options button_options.png
+button_quit button_quit.png
+background_main_menu background_main_menu.png
+
+[audio prefix]
+../data/audio/
+
+[audio]
+sclick_sound button_click.wav
+shover_sound button_hover.wav
+
+[strings prefix]
+../data/strings/
+
+[strings]
+menus.txt
+
+[fonts prefix]
+../data/fonts/
+
+[fonts]
+default coolvetica.ttf
+
+[components]
+NEW
+sName=txtMainTitle
+fXOffset=175
+fYOffset=45
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=game_title
+sAlignment=centre
+iFontSize=60
+sFont=default
+END
+NEW
+sName=imgMainBackground
+fXOffset=50
+fYOffset=0
+fWidth=350
+fHeight=800
+sType=image
+sTexture=background_main_menu
+END
+NEW
+sName=btnMainPlay
+fXOffset=75
+fYOffset=175
+fWidth=200
+fHeight=70
+sType=button
+sTexture=button_play
+sSoundHover=button_hover
+sSoundClick=button_click
+bHasListener=true
+END
+NEW
+sName=btnMainInstructions
+fXOffset=75
+fYOffset=275
+fWidth=200
+fHeight=70
+sType=button
+sTexture=button_instructions
+sSoundHover=button_hover
+sSoundClick=button_click
+bHasListener=true
+END
+NEW
+sName=btnMainHighScores
+fXOffset=75
+fYOffset=375
+fWidth=200
+fHeight=70
+sType=button
+sTexture=button_high_scores
+sSoundHover=button_hover
+sSoundClick=button_click
+bHasListener=true
+END
+NEW
+sName=btnMainOptions
+fXOffset=75
+fYOffset=475
+fWidth=200
+fHeight=70
+sType=button
+sTexture=button_options
+sSoundHover=button_hover
+sSoundClick=button_click
+bHasListener=true
+END
+NEW
+sName=btnMainQuit
+fXOffset=75
+fYOffset=575
+fWidth=200
+fHeight=70
+sType=button
+sTexture=button_quit
+sSoundHover=button_hover
+sSoundClick=button_click
+bHasListener=true
+END
+
+###############
+#These sections must come after the components section
+##
+[structure tree]
+ROOT->imgMainBackground
+imgMainBackground->txtMainTitle
+imgMainBackground->btnMainPlay
+imgMainBackground->btnMainInstructions
+imgMainBackground->btnMainHighScores
+imgMainBackground->btnMainOptions
+imgMainBackground->btnMainQuit
+

@@ -1,0 +1,88 @@
+# UI file for the instructions menu
+#
+# WARNING: Almost any errors in configuration will result in a program crash
+#          as the majority of input is not filtered
+###################################
+[textures prefix]
+../data/textures/menus/
+
+[textures]
+background_infopanel background_infopanel.png
+
+[audio prefix]
+../data/audio/
+
+[audio]
+sclick_sound button_click.wav
+shover_sound button_hover.wav
+
+[strings prefix]
+../data/strings/
+
+[strings]
+menus.txt
+
+[fonts prefix]
+../data/fonts/
+
+[fonts]
+default coolvetica.ttf
+
+[components]
+NEW
+sName=imgInstructionsBackground
+fXOffset=450
+fYOffset=100
+fWidth=700
+fHeight=600
+sType=image
+sTexture=background_infopanel
+END
+NEW
+sName=txtInstructionsTitle
+fXOffset=350
+fYOffset=30
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=instructions_title
+sAlignment=centre
+iFontSize=50
+sFont=default
+END
+NEW
+sName=txtInstructionsInfo
+fXOffset=50
+fYOffset=120
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=instructions_info_zxm
+sAlignment=left
+iFontSize=22
+sFont=default
+END
+NEW
+sName=txtInstructionsInfoMisc
+fXOffset=50
+fYOffset=240
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=instructions_info_misc
+sAlignment=left
+iFontSize=22
+sFont=default
+END
+
+###############
+#These sections must come after the components section
+##
+[structure tree]
+ROOT->imgInstructionsBackground
+imgInstructionsBackground->txtInstructionsTitle
+imgInstructionsBackground->txtInstructionsInfo
+imgInstructionsBackground->txtInstructionsInfoMisc

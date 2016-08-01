@@ -1,0 +1,36 @@
+# UI destructor file for the options menu
+###################################
+[textures]
+background_infopanel
+checkbox_red
+checkbox_green
+keyset_zxm_green
+keyset_adw_green
+keyset_123_green
+keyset_zxm_red
+keyset_adw_red
+keyset_123_red
+
+[audio]
+
+[strings prefix]
+
+[strings]
+
+[fonts]
+
+[root links]
+imgOptionsBackground
+
+[deconstruction]
+imgOptionsHotkeysCheckbox
+imgOptionsMusicCheckbox
+imgOptions123Set
+imgOptionsADWSet
+imgOptionsZXMSet
+txtOptionsKeyset
+txtOptionsSnowfall
+txtOptionsHotkeys
+txtOptionsMusic
+txtOptionsTitle
+imgOptionsBackground

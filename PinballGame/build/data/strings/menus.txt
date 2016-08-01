@@ -1,0 +1,31 @@
+# Lines beginning with a #, space or new line character are not loaded.
+# Formatting a string:
+# - Use a key and value pair.
+# - A key ends at the first space character
+# - A value ends at the first new line character after the key
+# - Whitespace is trimmed from the value up to the first non space character
+# - Use the ` symbol to place a new line character in to your string.
+# Example:
+# my_test_key              my value
+# Loads as:
+# my_test_key my value
+#
+# ==================================================================
+game_title                      Pinball
+#
+map_selection_title             Select a map
+#
+instructions_title              Instructions
+instructions_info_zxm           Use the Z and X keys to control the bumpers and the M key `to launch the ball. Try to stay alive for as long as you can to `get the best score!
+instructions_info_adw           Use the A and D keys to control the bumpers and the W key `to launch the ball. Try to stay alive for as long as you can to `get the best score!
+instructions_info_123           Use the 1 and 2 keys to control the bumpers and the 3 key `to launch the ball. Try to stay alive for as long as you can to `get the best score!
+instructions_info_misc          Try to aim your snowball so that you hit with extra bouncy `surfaces. The longer youre moving - the more points you'll get. `Be wary of other moving objects however. They will slow you `down greatly.
+#
+high_scores_title               High Scores
+high_scores_default             0
+#
+options_title                   Options
+options_music                   Music enabled
+options_hotkeys                 Menu hotkeys enabled
+options_snowfall                Snowfall animation enabled
+options_keyset                  Choose your preferred hotkey set

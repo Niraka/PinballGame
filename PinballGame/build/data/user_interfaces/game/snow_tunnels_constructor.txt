@@ -1,0 +1,144 @@
+# UI file for the snow_tunnels map.
+#
+# WARNING: Almost any errors in configuration will result in a program crash
+#          as the majority of input is not filtered
+###################################
+[textures prefix]
+../data/textures/game/ui/
+
+[textures]
+background_game background_game.png
+background_strip_top background_strip_top.png
+background_strip_bottom background_strip_bottom.png
+button_quit button_quit.png
+button_reset button_reset.png
+strip_graphic strip_graphic.png
+
+[audio prefix]
+../data/audio/
+
+[audio]
+sclick_sound button_click.wav
+shover_sound button_hover.wav
+
+[strings prefix]
+../data/strings/
+
+[strings]
+ingame.txt
+
+[fonts prefix]
+../data/fonts/
+
+[fonts]
+default coolvetica.ttf
+
+[components]
+NEW
+sName=frameStrip
+fXOffset=800
+fYOffset=0
+fWidth=400
+fHeight=800
+sType=frame
+END
+NEW
+sName=imgBackgroundGame
+fXOffset=50
+fYOffset=50
+fWidth=700
+fHeight=700
+sType=image
+sTexture=background_game
+END
+NEW
+sName=imgBackgroundStripTop
+fXOffset=50
+fYOffset=50
+fWidth=300
+fHeight=425
+sType=image
+sTexture=background_strip_top
+END
+NEW
+sName=imgBackgroundStripBot
+fXOffset=50
+fYOffset=525
+fWidth=300
+fHeight=225
+sType=image
+sTexture=background_strip_bottom
+END
+NEW
+sName=imgStripGraphic
+fXOffset=25
+fYOffset=25
+fWidth=250
+fHeight=250
+sType=image
+sTexture=strip_graphic
+END
+NEW
+sName=txtScoreTitle
+fXOffset=150
+fYOffset=300
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=score_title
+sAlignment=centre
+iFontSize=40
+sFont=default
+END
+NEW
+sName=txtScore
+fXOffset=150
+fYOffset=350
+fWidth=0
+fHeight=0
+sType=text
+sColor=black
+sString=score_default
+sAlignment=centre
+iFontSize=35
+sFont=default
+END
+NEW
+sName=btnGameQuit
+fXOffset=50
+fYOffset=125
+fWidth=200
+fHeight=70
+sType=button
+sTexture=button_quit
+sSoundHover=button_hover
+sSoundClick=button_click
+bHasListener=true
+END
+NEW
+sName=btnGameReset
+fXOffset=50
+fYOffset=30
+fWidth=200
+fHeight=70
+sType=button
+sTexture=button_reset
+sSoundHover=button_hover
+sSoundClick=button_click
+bHasListener=true
+END
+
+###############
+# This section must come after the components section
+# Order is not important
+[structure tree]
+ROOT->frameStrip
+ROOT->imgBackgroundGame
+frameStrip->imgBackgroundStripTop
+frameStrip->imgBackgroundStripBot
+imgBackgroundStripTop->imgStripGraphic
+imgBackgroundStripTop->txtScoreTitle
+imgBackgroundStripTop->txtScore
+imgBackgroundStripBot->btnQuit
+imgBackgroundStripBot->btnReset

@@ -1,0 +1,36 @@
+# UI destructor file for the high scores menu
+###################################
+[textures]
+background_infopanel
+button_reset
+
+[audio]
+
+[strings prefix]
+
+[strings]
+
+[fonts]
+
+[root links]
+imgHighScoresBackground
+
+[deconstruction]
+txtHighScores0
+txtHighScores1
+txtHighScores2
+txtHighScores3
+txtHighScores4
+txtHighScores5
+txtHighScores6
+txtHighScores7
+txtHighScoresTitle
+btnHighScoresReset
+imgHighScoresBackground
+
+
+
+
+
+
+
